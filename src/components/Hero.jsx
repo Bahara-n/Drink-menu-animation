@@ -4,17 +4,17 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/all";
 import { useMediaQuery } from "react-responsive";
 
-gsap.registerPlugin(SplitText);
+// gsap.registerPlugin(SplitText);
 
 const Hero = () => {
     const videoRef = useRef();
-    const videoTimelineRef = useRef();
+    //const videoTimelineRef = useRef();
 
     //mobile
     const isMobile = useMediaQuery({maxWidth: 767});
 
     useGSAP(() => {
-        const heroSplit = new SplitText('.title', { type: 'chars, words' });
+        const heroSplit = new SplitText('.title', { type: 'chars,words' });
         const paragraphsSplit = new SplitText('.subtitle', { type: 'lines' });
 
         //Apply text-gradient class once before animation
@@ -42,7 +42,7 @@ const Hero = () => {
                 start: 'top top',
                 end: 'bottom top',
                 scrub: true,
-            }
+            },
         })
         .to('.right-leaf', { y: 200}, 0)
         .to('.left-leaf', { y: -200}, 0)
@@ -61,12 +61,11 @@ const Hero = () => {
             },
         });
 
-        videoRef.current.onloadedmetadata = () => {
-            tl.to(videoRef.current, {
-                currentTime: videoRef.current.duration
-            });
-        };
-
+            videoRef.current.onloadedmetadata = () => {
+                tl.to(videoRef.current, {
+                    currentTime: videoRef.current.duration
+                });
+            };
     }, []);
     
     return (
