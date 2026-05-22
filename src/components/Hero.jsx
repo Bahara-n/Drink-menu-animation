@@ -14,11 +14,11 @@ const Hero = () => {
     const isMobile = useMediaQuery({maxWidth: 767});
 
     useGSAP(() => {
-        const heroSplit = new SplitText('.title', { type: 'chars,words' });
-        const paragraphsSplit = new SplitText('.subtitle', { type: 'lines' });
+        const heroSplit = SplitText.create('.title', { type: 'chars,words' });
+        const taglineSplit = SplitText.create('.hero-tagline', { type: 'lines' });
+        const viewCocktailsSplit = SplitText.create('.view-cocktails-text', { type: 'lines' });
 
-        //Apply text-gradient class once before animation
-        heroSplit.chars.forEach((chars) => chars.classList.add('text-gradient'));
+        heroSplit.chars.forEach((char) => char.classList.add('text-gradient'));
 
         gsap.from(heroSplit.chars, {
             yPercent: 100,
@@ -27,7 +27,7 @@ const Hero = () => {
             stagger: 0.05,
         });
 
-        gsap.from(paragraphsSplit.lines, {
+        gsap.from([...taglineSplit.lines, ...viewCocktailsSplit.lines], {
             opacity: 0,
             yPercent: 100,
             duration: 1.8,
@@ -36,7 +36,7 @@ const Hero = () => {
             delay: 1,
         });
 
-        gsap.timeline({
+        const leafTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '#hero',
                 start: 'top top',
@@ -45,13 +45,12 @@ const Hero = () => {
             },
         })
         .to('.right-leaf', { y: 200}, 0)
-        .to('.left-leaf', { y: -200}, 0)
+        .to('.left-leaf', { y: -200}, 0);
 
         const startValue = isMobile ? 'top 50%' : 'center 60%';
         const endValue = isMobile ? '120% top' : 'bottom top';
 
-        //Video animation timeline
-        const tl = gsap.timeline({
+        const videoTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: 'video',
                 start: startValue,
@@ -61,12 +60,28 @@ const Hero = () => {
             },
         });
 
-            videoRef.current.onloadedmetadata = () => {
-                tl.to(videoRef.current, {
-                    currentTime: videoRef.current.duration
-                });
-            };
-    }, []);
+        const video = videoRef.current;
+        const onLoadedMetadata = () => {
+            videoTimeline.to(video, {
+                currentTime: video.duration,
+            });
+        };
+
+        if (video) {
+            video.onloadedmetadata = onLoadedMetadata;
+        }
+
+        return () => {
+            heroSplit.revert();
+            taglineSplit.revert();
+            viewCocktailsSplit.revert();
+            leafTimeline.scrollTrigger?.kill();
+            videoTimeline.scrollTrigger?.kill();
+            if (video) {
+                video.onloadedmetadata = null;
+            }
+        };
+    }, [isMobile]);
     
     return (
         <>
@@ -87,18 +102,18 @@ const Hero = () => {
             <div className="body">
                 <div className="content">
                     <div className="space-y-5 hidden md:block">
-                        <p>Cool. Crisp. Classic</p>
-                        <p className="subtitle">
+                        <p>Kjølig. Frisk. Klassisk.</p>
+                        <p className="hero-tagline">
                             Sip the spirit <br /> of Summer
                         </p>
                     </div>
 
                     <div className="view-cocktails">
-                        <p className="subtitle">
-                            Every cocktail on our menu is a blend of premium ingridents, creative 
-                            flair, and timeless recipes - designed to delight your senses.
+                        <p className="view-cocktails-text">
+                            Hver cocktail på menyen vår er en blanding av førsteklasses ingredienser,
+                            kreativ stil og tidløse oppskrifter – designet for å glede sansene dine.
                         </p>
-                        <a href="#cocktails">View Cocktails</a>
+                        <a href="#cocktails">Se Cocktails</a>
                     </div>
                 </div>
             </div>

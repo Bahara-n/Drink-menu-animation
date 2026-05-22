@@ -75,16 +75,14 @@ const Art = () => {
             </div>
 
             <div className="masked-container">
-                <h2 className="will-fade">Sip-Worthy Perfection </h2>
+                <h2 className="will-fade">Nipp til verdig perfeksjon </h2>
                 <div id="masked-content">
-                    <h3>Made with Craft, Poured with Passion</h3>
-                    <p> This ins't just a drink. It's a carefully crafted moment made just for you</p>
-
+                    <h3>Laget med håndkraft, hellt med lidenskap</h3>
+                    <p> Dette er ikke bare en drink. Det er en nøye utformet momenet laget bare for deg.     </p>
                 </div>
-
             </div>
         </div>
     </div>
-    )
-}
-export default Art
+  );
+};
+export default Art;

@@ -1,7 +1,7 @@
  const navLinks = [
     { id: 'cocktails', title: 'Cocktails'}, 
-    { id: 'om', title: 'Om oss'},
-    { id: 'arbeid', title: 'Kunsten'},
+    { id: 'about', title: 'Om oss'},
+    { id: 'art', title: 'Kunsten'},
     { id: 'kontakt', title: 'Kontakt'},
 ];
 
@@ -9,13 +9,13 @@ const cocktailLists = [
  {
 	name: "Chapel Hill Shiraz",
 	country: "AU",
-	detail: "Battle",
+	detail: "400 ml",
 	price: "160kr",
  },
  {
 	name: "Caten Malbee",
 	country: "AU",
-	detail: "Battle",
+	detail: "750 ml",
 	price: "490kr",
  },
  {
@@ -36,14 +36,14 @@ const mockTailLists = [
  {
 	name: "Tropical Bloom",
 	country: "US",
-	detail: "Battle",
+	detail: "330 ml",
 	price: "100kr",
  },
  {
 	name: "Passionfruit Mint",
 	country: "US",
-	detail: "Battle",
-	price: "390kr",
+	detail: "Glass",
+	price: "189kr",
  },
  {
 	name: "Citrus Glow",
@@ -75,33 +75,33 @@ const profileLists = [
 ];
 
 const featureLists = [
- "Perfectly balanced blends",
- "Garnished to perfection",
- "Ice-cold every time",
- "Expertly shaken & stirred",
+ "Perfekt balanserte blandinger",
+ "Perfektsjonerte pyntinger",
+ "Kjølig hver gang",
+ "Ekspertblandet & stokket",
 ];
 
 const goodLists = [
- "Handpicked ingredients",
- "Signature techniques",
- "Bartending artistry in action",
- "Freshly muddled flavors",
+ "Håndplukkede ingredienser",
+ "Signature teknikker",
+ "Bartendingkunst i handling",
+ "Ferske smaker",
 ];
 
 const storeInfo = {
- heading: "Where to Find Us",
- address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
+ heading: "Hvor finner du oss",
+ address: "Valkyriegata 13A, 0366 Oslo, Norge",
  contact: {
-	phone: "(555) 987-6543",
+	phone: "47 476 75 157",
 	email: "hello@jsmcocktail.com",
  },
 };
 
 const openingHours = [
- { day: "Mon-Thu", time: "11:00am - 12am" },
- { day: "Fri", time: "11:00am - 2am" },
- { day: "Sat", time: "9:00am - 2am" },
- { day: "Sun", time: "9:00am - 1am" },
+ { day: "Man-Tor", time: "13:00 - 12:00" },
+ { day: "Fre", time: "11:00 - 02:00" },
+ { day: "Lør", time: "11:00 - 03:00" },
+ { day: "Søn", time: "11:00 - 01:00" },
 ];
 
 const socials = [
@@ -127,33 +127,33 @@ const allCocktails = [
 	id: 1,
 	name: "Classic Mojito",
 	image: "/images/drink1.png",
-	title: "Simple Ingredients, Bold Flavor",
+	title: "Enkle Ingredienser, Fyldig Smak",
 	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+	 "Laget med rom, lime juice, og fersk mynte, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
  },
  {
 	id: 2,
-	name: "Raspberry Mojito",
+	name: "Orange Martini",
 	image: "/images/drink2.png",
-	title: "A Zesty Classic That Never Fails",
+	title: "En zesty klassiker som aldri slår feil",
 	description:
-	 "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
+	 "Martini er en klassiker som balanserer syrlige appelsinser, myk gin og et hint av sødme. Ristet, frossen eller på is - den er alltid crisp og forfriskende.",
  },
  {
 	id: 3,
-	name: "Violet Breeze",
+	name: "Margarita",
 	image: "/images/drink3.png",
-	title: "Simple Ingredients, Bold Flavor",
+	title: "Legendarisk drink med et hint av sødme",
 	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+	 "Laget med tequila, Cointreau og lime juice. Margaritaen er enkel å lage og full av karakter. Legg til en saltet kant for den perfekte drinken på sommerkvelder.",
  },
  {
 	id: 4,
-	name: "Curacao Mojito",
+	name: "Aperol Spritz",
 	image: "/images/drink4.png",
-	title: "Crafted With Care, Poured With Love",
+	title: "Sprudlende og frisk drink",
 	description:
-	 "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
+	 "Tradisjonell drink laget med prosecco, Aperol og sprudlevan, enten du feirer eller bare vil slapper av.",
  },
 ];
 

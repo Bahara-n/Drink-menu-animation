@@ -39,7 +39,7 @@ const Contact = () => {
             <img src="/images/footer-right-leaf.png" alt="" id="f-right-leaf" />
 
             <div className="content">
-                <h2>Where to find us</h2>
+                <h2>Hvor finner du oss</h2>
 
                 <div>
                     <h3>Besøk baren</h3>
