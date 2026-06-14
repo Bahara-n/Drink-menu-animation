@@ -64,14 +64,16 @@ const Menu = () => {
             <div className="content ">
                 <div className="arrows">
                     <button className="text-left" onClick={() => goToSlide(currentIndex - 1)}>
-                        <span>{prevCocktail.name}
-                            <img src="/images/right-arrow.png" alt="right-arrow" aria-hidden="true"/>
+                        <span>
+                            <img src="/images/left-arrow-vector.png" alt="left-arrow" aria-hidden="true"/>
+                            {prevCocktail.name}
                         </span>
                     </button>
 
-                    <button className="text-left" onClick={() => goToSlide(currentIndex + 1)}>
-                        <span>{nextCocktail.name}
-                            <img src="/images/left-arrow.png" alt="left-arrow" aria-hidden="true"/>
+                    <button className="text-right" onClick={() => goToSlide(currentIndex + 1)}>
+                        <span>
+                            {nextCocktail.name}
+                            <img src="/images/right-arrow-vector.png" alt="right-arrow" aria-hidden="true"/>
                         </span>
                     </button>
 
