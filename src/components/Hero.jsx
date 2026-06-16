@@ -111,9 +111,9 @@ const Hero = () => {
                     <div className="view-cocktails">
                         <p className="view-cocktails-text">
                             Hver cocktail på menyen vår er en blanding av førsteklasses ingredienser,
-                            kreativ stil og tidløse oppskrifter – designet for å glede sansene dine.
+                            og tidløse oppskrifter <br/>– designet for å glede sansene dine.
                         </p>
-                        <a href="#cocktails">Se Cocktails</a>
+                        <a href="#cocktails">Utforsk cocktails</a>
                     </div>
                 </div>
             </div>

@@ -78,7 +78,7 @@ const Art = () => {
                 <h2 className="will-fade">Nipp til verdig perfeksjon </h2>
                 <div id="masked-content">
                     <h3>Laget med håndkraft, hellt med lidenskap</h3>
-                    <p> Dette er ikke bare en drink. Det er en nøye utformet momenet laget bare for deg.     </p>
+                    <p> Dette er ikke bare en drink. Det er en nøye utformet moment laget bare for deg.     </p>
                 </div>
             </div>
         </div>
